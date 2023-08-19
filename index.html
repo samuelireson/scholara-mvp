@@ -10,16 +10,17 @@
     <title>Scholara</title>
 
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,300,0,200"/>
 </head>
 <body>
     <header>
         <a href="#"><img src="assets/images/logo.svg" alt="Logo"></a>
         <nav>
-            <a href="#" class="active">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">What We Offer</a>
+            <a href="#home">Home</a>
+            <a href="#why-choose-us">Why Choose Us?</a>
+            <a href="#what-we-offer">What We Offer</a>
+            <a href="#contact">Contact Us</a>
         </nav>
-        <button>Find A Tutor</button>
     </header>
 
     <main>
@@ -35,27 +36,109 @@
         <div id="about-us-banner">
             <div class="banner-item">
                 <div class="banner-item-title">
-                    
+                    Russell Group
                 </div>
-                <div class="banner-item-content"></div>
+                <p class="banner-item-content">
+                    We only hire tutors who currently attend the best universities in the UK.
+                </p>
             </div>
             <div class="banner-item">
                 <div class="banner-item-title">
-
+                    10 A*s
                 </div>
-                <div class="banner-item-content"></div>
+                <p class="banner-item-content">
+                    All of our tutors achieved 10 or more A*s at GCSE.
+                </p>
             </div>
             <div class="banner-item">
                 <div class="banner-item-title">
-
+                    48 hours
                 </div>
-                <div class="banner-item-content"></div>
+                <p class="banner-item-content">
+                    The average time it takes for us to assign you the perfect tutor, and start your lessons.
+                </p>
             </div>
         </div>
-        <section>
+        <section id="why-choose-us">
+            <h1>Why Choose <span>Us?</span></h1>
+            <div class="review-card">
+                <img src="assets/images/review_card_1.jpeg" alt="Happy student">
+                <div class="review-card-content">
+                    <blockquote>My tutor knew exactly what I needed!</blockquote>
+                    <p>This is the section where the remainder of the review will go.</p>
+                </div>
+            </div>
+            <div class="benefit">
 
+            </div>
+            <div class="benefit"></div>
+            <div class="review-card">
+                <img src="assets/images/review_card_2.jpeg" alt="Happy student">
+                <div class="review-card-content">
+                    <blockquote>My tutor knew exactly what I needed!</blockquote>
+                    <p>This is the section where the remainder of the review will go.</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="assets/images/review_card_3.jpeg" alt="Happy student">
+                <div class="review-card-content">
+                    <blockquote>My tutor knew exactly what I needed!</blockquote>
+                    <p>This is the section where the remainder of the review will go.</p>
+                </div>
+            </div>
+            <div class="benefit"></div>
+        </section>
+        <section id="what-we-offer">
+            <h1>What we offer</h1>
+        </section>
+        <section id="contact">
+            <div id="contact-form-container">
+                <h1>Get In Touch!</h1>
+                <p>
+                    Send us a short message explaining your current learning situation, the support you’re looking for, and a member of our team will respond to pair you with a tutor. We look forward to hearing from you!
+                </p>
+                <form action="#">
+                    <div class="input-box">
+                        <div class="input-field">
+                            <input type="text" required>
+                            <label>First Name</label>
+                            <span class="material-symbols-outlined">badge</span>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" required>
+                            <label>Surname</label>
+                        </div>
+                        <div class="input-field">
+                            <input type="email" required>
+                            <label>Email</label>
+                            <span class="material-symbols-outlined">alternate_email</span>
+                        </div>
+                        <div class="input-field">
+                            <input type="number"  required>
+                            <label>Year Group</label>
+                            <span class="material-symbols-outlined">work</span>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" required>
+                            <label>Subject</label>
+                            <span class="material-symbols-outlined">backpack</span>
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <div class="textarea-field">
+                            <textarea name="" id="" cols="30" rows="15" ></textarea>
+                            <label>Message</label>
+                        </div>
+                    </div>
+                    <div class="button-box">
+                        <button type="submit" >Send!</button>
+                    </div>
+                </form>
+            </div>
         </section>
     </main>
+    <footer>
 
+    </footer>
 </body>
 </html>
