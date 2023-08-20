@@ -11,331 +11,323 @@
     --secondary-600: #615D8F;
     --accent-600: #9FA98B;
 
-    --font-primary: 'Rokkit', serif;
+    --font-primary: 'Rokkitt', serif;
     --font-accent: 'Roboto', sans-serif;
 }
 
 /* Global styles */
-* {
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Rokkitt', serif;
+    font-family: var(--font-primary);
     color: var(--primary-500);
-}
-
-/* How to define smooth scrolling? */
-
-h1 {
-    font-size: 4rem;
-    font-weight: 400;
-    margin-bottom: 1rem;
-    position: relative;
-
-    &::before {
-        content: '';
-        font-family: var(--font-accent);
-        text-transform: uppercase;
-        color: var(--secondary-500);
-        font-size: 1rem;
-        width: 100%;
-        height: 1rem;
-        position: absolute;
-        top: -25px;
-        left: 0;
-        letter-spacing: 5px;
-        word-spacing: 10px;
-    }
-    & span {
-        font-weight: 500;
-    }
-}
-
-a {
-    text-decoration: none;
-}
-
-img {
-    border-radius: 25px;
-    border: 5px solid var(--accent-600);
-}
-
-/* Style tree */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 4rem;
-    position: sticky;
-    top: 0;
-    background-color: rgba(256, 256, 256, 0.5);
-    backdrop-filter: blur(1.5rem);
-    z-index: 1;
-
-    & a img {
-        height: 3rem;
-        border: none;
-        border-radius: 0;
-    }
-    & nav {
-        & a {
-            color: var(--primary-400);
-            margin-left: 3rem;
-            padding: 5px 8px;
-            position: relative;
-
-            &::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 1px;
-                background-color: var(--primary-600);
-                scale: 0;
-                transition: scale .2s ease;
-            }
-
-            &:hover, &.active {
-                font-weight: 500;
-                &::after{
-                    scale: 1;
-                }
-            }
-
-        }
-    }
 }
 
 main {
     z-index: 0;
 }
 
-/* Section styles */
+a {
+    text-decoration: none;
+}
+
+/* Section specific global styles */
+
 section {
-    max-width: 1400px;
+    margin-bottom: 1rem;
+}
+
+.section-container {
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 2rem;
 }
 
+.section-heading {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
 
-/* Home Section */
+    & p {
+        font-family: var(--font-accent);
+        font-size: 1em;
+        color: var(--secondary-400);
 
-section#home {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-
-    & div#home-content {
-        width: 100%;
-        align-self: center;
-
-        & h1::before {
-            content: 'discover your potential';
-        }
-
-        & p {
-            width: 75%;
-        }
-    }
-
-    & div#home-image {
-        width: 100%;
-        align-self: center;
+        margin: 0;
         
-        & img {
-            width: 100%;
-        }
+        text-transform: uppercase;
+        letter-spacing: .25em;
+        word-spacing: .5em;
     }
 
+    & h1, & h2 {
+        font-size: 4em;
+        font-weight: 400;
+
+        margin: 0;
+
+        & span {
+            font-weight: 500;
+        }
+    }
 }
 
-/* About Us Banner */
-#about-us-banner {
+section img {
+    border-radius: 25px;
+    border: 3px solid var(--accent-600);
     width: 100%;
-    max-height: fit-content;
-    background-image: linear-gradient(to left, var(--primary-600), var(--primary-400));
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    
-    & .banner-item {
-        max-width: fit-content;
-        justify-self: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        margin: 1.5rem 1rem;
-        color: white;
-        
-        & div.banner-item-title {
-            font-size: 3rem;
-            color: inherit;
-        }
-        
-        & p.banner-item-content {
-            color: inherit;
-            text-align: center;
-            width: 50%;
-            font-weight: 300;
-        }
-    }
 }
 
-/* Why Choose Us Section */
-
-section#why-choose-us {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding-top: 3rem;
+/* Card specific styles */
+.card {
+    width: 100%;
+    border: 2px solid var(--primary-500);
+    border-radius: 10px;
+    box-shadow: 3px 3px var(--primary-500);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     gap: 1rem;
+    padding-block: 1rem;
+    transition: box-shadow 0.2s ease;
 
-    & h1 {
-        grid-column: 1/3;
-        text-align: center;
+    &:hover {
+        box-shadow: 0 0 var(--primary-500);
+    }
+}
 
-        &::before {
-            content: 'benefits';
-        }
+/* Document styles */
+/* Header styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: white;
+    position: sticky;
+    top: 0;
+
+    & label {
+        font-size: 3em;
+        cursor: pointer;
+        display: none;
+    }
+    & input {
+        display: none;
     }
 
-    & .review-card {
-        width: 100%;
-        max-height: fit-content;
-        border: 2px solid var(--primary-500);
-        border-radius: 10px;
-        box-shadow: 3px 3px var(--primary-500);
-
+    & nav {
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        gap: 1rem;
+        gap: 2em;
 
-        padding-block: 1rem;
+            & a {
+            color: var(--primary-500);
+            position: relative;
+            font-size: 1.25em;
 
-        transition: box-shadow 0.2s ease;
+            &::after {
+                content: '';
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                transform: translateY(100%);
+                background-color: var(--primary-500);
+                scale: 0;
+                transition: scale .2s ease;
+            } 
 
-        & img {
-            width: 40%;
-        }
-
-        & .review-card-content {
-            width: 100%;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            & blockquote {
-                font-size: 2rem;
-                margin-block: 1rem;
+            &:hover::after {
+                scale: 1;
             }
-            & p {
-                width: 75%;
-                text-align: center;
-            }
-        }
-
-        &:hover {
-        box-shadow: 0px 0px var(--primary-500);
         }
     }
 }
 
-/* What We Offer Section */
-
-/* Contact Section */
-
-section#contact {
-    background-image: url(assets/images/contact_background.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    max-width: none;
-    margin: none;
-
-    height: 700px;
-
-    position: relative;
-
-    & div#contact-form-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-
-        background-color: white;
-        padding: 3rem;
-
-        width: 50%;
-        min-height: auto;
-
-        position: absolute;
-        top: 50%;
-        left: 30%;
-        transform: translate(-50%, -50%);
-    
-        & h1 {
-            text-align: center;
-    
-            &::before {
-                content: 'start your tuition journey now...';
-                width: 150%;
-                left: -55px;
+/* Header breakpoint */
+@media (max-width: 992px) {
+    header {
+        & label.icons {
+            display: block;
+            & #menu-icon {
+                display: block;
+            }
+            & #close-icon {
+                display: none;
             }
         }
+        & nav {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            flex-direction: column;
+            gap: 3em;
+            align-items: center;
+            padding-block: 2em;
+            background-color: white;
+            transform: scaleY(0);
+            transition: transform .2s ease;
+            transform-origin: 50% 0;
+        }
+
+        & input:checked{
+            &~label.icons {
+                & #menu-icon {
+                    display: none;
+                }
+                & #close-icon {
+                    display: block;
+                }
+            }
+            &~nav {
+                transform: scaleY(1);
+            }
+        }
+    }
+}
+
+/* Section styles */
+/* Home section */
+section#home {
+    & .section-container {
+        display: grid;
+        grid-template-columns: 3fr 2fr;
+        gap: 1rem;
+        align-items: center;
 
         & p {
+            width: 85%;
+        }
+    }
+}
+
+/* About us banner section */
+section#about-us-banner {
+    background-image: linear-gradient(to left, var(--primary-500), var(--primary-300));
+
+    & .section-container {
+        display: flex;
+        gap: 2rem;
+        justify-content: space-between;
+        align-items: center;
+
+        & .banner-item {
+            color: white;
+            flex: 1 1 0;
+            margin-block: 1rem;
             text-align: center;
-            width: 75%;
-            margin: 0 auto;
+
+            & .banner-item-title {
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+/* Why choose us section */
+section#why-choose-us {
+    & .section-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        & .section-heading {
+            grid-column: 1/3;
+            text-align: center;
         }
 
-        & form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+        & .review-card {
 
-            & .input-box {
+            & img {
+                width: 40%;
+            }
+    
+            & .review-card-content {
                 width: 100%;
-
                 display: flex;
                 flex-direction: column;
-                justify-content: space-between;
                 align-items: center;
-
-                & .input-field {
-                    width: inherit;
-
-                    & input {
-                        width: inherit;
-                        border: none;
-                        outline: none;
-                        border-bottom: 2px solid var(--primary-500);
-                    }
+                text-align: center;
+    
+                & blockquote {
+                    font-size: 2rem;
+                    margin-block: 1rem;
                 }
-            }
-
-            & .button-box {
-                grid-column: 1/3;
-                width: 50%;
-                justify-self: center;
-                
-                & button {
-                    width: 100%;
+                & p {
+                    width: 75%;
                 }
             }
         }
     }
-    
 }
 
-/* Footer */
+/* Benefit banner section */
+section#benefit-banner {
+    background-image: linear-gradient(to left, var(--primary-500), var(--primary-300));
 
-footer {
-    background-image: linear-gradient(to left, var(--primary-600), var(--primary-400));
-    height: 300px;
-    width: 100%;
+    & .section-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
+        & p {
+            color: white;
+            text-transform: capitalize;
+            font-size: 1.5em;
+        }
+    }
+}
+
+/* What we offer section */
+section#what-we-offer {
+    & .section-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+
+        & .section-heading {
+            grid-column: 1/4;
+            text-align: right;
+        }
+
+        & .service-card {
+            text-align: center;
+
+            & img {
+                width: 80%;
+            }
+
+            & h3 {
+                margin: 0;
+                font-family: var(--font-accent);
+                text-transform: uppercase;
+                font-size: 1.5em;
+                font-weight: 400;
+            }
+
+            & p {
+                margin: 0;
+            }
+
+            & ul {
+                margin: 0;
+                padding: 0;
+            }
+
+            & .price {
+                font-family: var(--font-accent);
+                font-size: 1.25em;
+                text-transform: uppercase;
+            }
+        }
+    }
 }
